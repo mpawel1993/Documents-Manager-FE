@@ -1,6 +1,11 @@
 :host {
-  border: 1px solid red;
+  box-shadow: 0 4px 2px -2px gray;
   display: block;
   background: #e91e63;
   height: 50px;
+  color: white;
+  font-size: 20px;
+  padding-left: 10px;
+  padding-top: 5px;
+  font-family: Roboto, sans-serif;
 }

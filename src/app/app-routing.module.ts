@@ -5,9 +5,9 @@ import {SearchFileComponent} from "./main-panel/search-file/search-file.componen
 import {AdminPageComponent} from "./main-panel/admin-page/admin-page.component";
 
 const routes: Routes = [
-  { path: '/upload-file', component: UploadFileComponent },
-  { path: '/search-files', component: SearchFileComponent },
-  { path: '/admin-page', component: AdminPageComponent }
+  { path: 'upload-file', component: UploadFileComponent },
+  { path: 'search-files', component: SearchFileComponent },
+  { path: 'admin-page', component: AdminPageComponent }
 ];
 
 @NgModule({

@@ -9,6 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { UploadFileComponent } from './main-panel/upload-file/upload-file.component';
 import { SearchFileComponent } from './main-panel/search-file/search-file.component';
 import { AdminPageComponent } from './main-panel/admin-page/admin-page.component';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AdminPageComponent } from './main-panel/admin-page/admin-page.component
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
