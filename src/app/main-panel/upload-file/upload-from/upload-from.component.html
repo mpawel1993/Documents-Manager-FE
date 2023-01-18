@@ -1,0 +1,55 @@
+<form>
+    <mat-form-field>
+        <mat-label>Document name</mat-label>
+        <input matInput>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+        <mat-label>Issuing authority</mat-label>
+        <mat-select>
+            <mat-option value="one">1</mat-option>
+            <mat-option value="two">2</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+        <mat-label>Type</mat-label>
+        <mat-select>
+            <mat-option value="one">1</mat-option>
+            <mat-option value="two">2</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+        <mat-label>Creation date</mat-label>
+        <input matInput [matDatepicker]="picker">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-chip-list" appearance="fill">
+        <mat-label>Favorite Fruits</mat-label>
+        <mat-chip-grid #chipGrid aria-label="Fruit selection">
+            <mat-chip-row *ngFor="let fruit of fruits" (removed)="remove(fruit)">
+                {{fruit}}
+                <button matChipRemove [attr.aria-label]="'remove ' + fruit">
+                    <mat-icon>cancel</mat-icon>
+                </button>
+            </mat-chip-row>
+        </mat-chip-grid>
+        <input placeholder="New Fruit..." #fruitInput [formControl]="fruitCtrl"
+               [matChipInputFor]="chipGrid" [matAutocomplete]="auto"
+               [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+               (matChipInputTokenEnd)="add($event)"/>
+        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+            <mat-option *ngFor="let fruit of filteredFruits | async" [value]="fruit">
+                {{fruit}}
+            </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
+    <br>
+    <button mat-raised-button color="primary">Save</button>
+    <button mat-raised-button color="primary">Clear</button>
+
+</form>
