@@ -26,7 +26,18 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatChipsModule} from "@angular/material/chips";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatIconModule} from "@angular/material/icon";
-
+import {InputTextModule} from "primeng/inputtext";
+import {ProgressBarModule} from "primeng/progressbar";
+import {ToastModule} from "primeng/toast";
+import {ButtonModule} from "primeng/button";
+import {DropdownModule} from "primeng/dropdown";
+import {ContextMenuModule} from "primeng/contextmenu";
+import {MultiSelectModule} from "primeng/multiselect";
+import {DialogModule} from "primeng/dialog";
+import {SliderModule} from "primeng/slider";
+import {CalendarModule} from "primeng/calendar";
+import {TableModule} from "primeng/table";
+import {DocumentSearchService} from "./main-panel/search-file/document-search-service";
 
 @NgModule({
   declarations: [
@@ -58,9 +69,10 @@ import {MatIconModule} from "@angular/material/icon";
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    MatIconModule
+    MatIconModule,
+    TableModule
   ],
-  providers: [MessageService],
+  providers: [MessageService,DocumentSearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

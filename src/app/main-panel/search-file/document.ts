@@ -1,6 +1,6 @@
-export interface Car {
-    vin;
-    year;
-    brand;
-    color;
+export interface Document {
+    documentName: string;
+    issuingAuthority: string;
+    type: string;
+    tags: string;
 }
