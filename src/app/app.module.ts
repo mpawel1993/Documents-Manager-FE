@@ -9,35 +9,26 @@ import { FooterComponent } from './footer/footer.component';
 import { UploadFileComponent } from './main-panel/upload-file/upload-file.component';
 import { SearchFileComponent } from './main-panel/search-file/search-file.component';
 import { AdminPageComponent } from './main-panel/admin-page/admin-page.component';
-import {MatButtonModule} from '@angular/material/button';
-import {UploadFromComponent} from './main-panel/upload-file/upload-from/upload-from.component';
-import {DragDropUploadFromComponent} from './main-panel/upload-file/drag-drop-upload-from/drag-drop-upload-from.component';
-import {FileUploadModule} from 'primeng/fileupload';
-import {HttpClientModule} from '@angular/common/http';
-import {MessageService} from "primeng/api";
-import {MatInputModule} from '@angular/material/input';
-import {MatSelectModule} from '@angular/material/select';
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatNativeDateModule} from "@angular/material/core";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {DragDropModule} from '@angular/cdk/drag-drop';
-import {MatAutocompleteModule} from "@angular/material/autocomplete";
-import {MatFormFieldModule} from "@angular/material/form-field";
-import {MatChipsModule} from "@angular/material/chips";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {MatIconModule} from "@angular/material/icon";
-import {InputTextModule} from "primeng/inputtext";
-import {ProgressBarModule} from "primeng/progressbar";
-import {ToastModule} from "primeng/toast";
-import {ButtonModule} from "primeng/button";
-import {DropdownModule} from "primeng/dropdown";
-import {ContextMenuModule} from "primeng/contextmenu";
-import {MultiSelectModule} from "primeng/multiselect";
-import {DialogModule} from "primeng/dialog";
-import {SliderModule} from "primeng/slider";
-import {CalendarModule} from "primeng/calendar";
-import {TableModule} from "primeng/table";
-import {DocumentSearchService} from "./main-panel/search-file/document-search-service";
+import { MatButtonModule } from '@angular/material/button';
+import { UploadFromComponent } from './main-panel/upload-file/upload-from/upload-from.component';
+import { DragDropUploadFromComponent } from './main-panel/upload-file/drag-drop-upload-from/drag-drop-upload-from.component';
+import { FileUploadModule } from 'primeng/fileupload';
+import { HttpClientModule } from '@angular/common/http';
+import { MessageService } from "primeng/api";
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from "@angular/material/core";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { MatAutocompleteModule } from "@angular/material/autocomplete";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatChipsModule } from "@angular/material/chips";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { MatIconModule } from "@angular/material/icon";
+import { TableModule } from "primeng/table";
+import { DocumentSearchService } from "./main-panel/search-file/document-search-service";
+import { UploadDocumentService } from './service/upload-document-service';
 
 @NgModule({
   declarations: [
@@ -72,7 +63,7 @@ import {DocumentSearchService} from "./main-panel/search-file/document-search-se
     MatIconModule,
     TableModule
   ],
-  providers: [MessageService,DocumentSearchService],
+  providers: [MessageService,DocumentSearchService,UploadDocumentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

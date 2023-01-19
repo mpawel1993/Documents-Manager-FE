@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { appDetailsApi } from 'src/environments/environment';
 
 @Component({
   selector: 'app-footer',
@@ -15,7 +16,7 @@ export class FooterComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.httpClient.get('http://localhost:8080/details/footer', { responseType: 'text' })
+    this.httpClient.get(`${appDetailsApi.footerInfo}`, { responseType: 'text' })
       .subscribe(resp => { this.environment.next(resp); });
   }
 }
